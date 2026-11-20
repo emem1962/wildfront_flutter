@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: wildfront-multiplayer
+    runtime: node
+    plan: free
+    region: frankfurt
+    rootDir: multiplayer-server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
